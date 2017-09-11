@@ -4,7 +4,8 @@ var margin = {top: 30, right: 20, bottom: 70, left: 50},
     height = 300 - margin.top - margin.bottom;
 
 // Parse the date / time
-var parseDate = d3.time.format("%b %Y").parse;
+var parseDate = d3.time.format("%b %Y").parse
+var parseNum = d3.format("");
 
 // Set the ranges
 var x = d3.time.scale().range([0, width]);
@@ -35,7 +36,7 @@ var svg = d3.select("body")
 d3.csv("data/stocks.csv", function(error, data) {
     data.forEach(function(d) {
 		d.date = parseDate(d.date);
-		d.price = +Number(d.price);
+		d.price = +parseNum(d.price);
     });
 
     // Scale the range of the data

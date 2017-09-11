@@ -35,7 +35,7 @@ var svg = d3.select("body")
 d3.csv("data/stocks.csv", function(error, data) {
     data.forEach(function(d) {
 		d.date = parseDate(d.date);
-		d.price = +d.price;
+		d.price = +Number(d.price);
     });
 
     // Scale the range of the data

@@ -24,7 +24,7 @@ var priceline = d3.svg.line()
     .y(function(d) { return y(d.price); });
 
 // Adds the svg canvas
-var svg = d3.select("graph1")
+var svg = d3.select("#graph1")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)

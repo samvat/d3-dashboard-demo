@@ -50,11 +50,14 @@ shape-rendering : crispEdges;
   left: 10px;
   top: 10px;
   width: 1800px;
-    text-align: center;
 }
 #header h1 {
-
   text-align: center;
+}
+#footer {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
 }
 .grid .tick {
     stroke: lightgrey;

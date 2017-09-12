@@ -55,7 +55,7 @@ shape-rendering : crispEdges;
   text-align: center;
 }
 #footer {
-  position: fixed;
+  position: absolute;
   right: 10px;
   bottom: 10px;
 }

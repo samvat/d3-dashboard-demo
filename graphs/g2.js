@@ -1,8 +1,8 @@
 var parseDate = d3.time.format("%b %Y").parse
-
+var parseNum = d3.format("");
 var margin = {top: 20, right: 30, bottom: 30, left: 40},
-    width = 960 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 600 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
 
 var x = d3.time.scale()
     .range([0, width]);
@@ -15,17 +15,18 @@ var z = d3.scale.category20c();
 var xAxis = d3.svg.axis()
     .scale(x)
     .orient("bottom")
-    .ticks(d3.time.days);
+    .ticks(5);
 
 var yAxis = d3.svg.axis()
     .scale(y)
-    .orient("left");
+    .orient("left")
+    .ticks(5);
 
 var stack = d3.layout.stack()
     .offset("zero")
-    .values(function(d) { return d.values; })
+    .values(function(d) { return d.prices; })
     .x(function(d) { return d.date; })
-    .y(function(d) { return d.value; });
+    .y(function(d) { return d.price; });
 
 var nest = d3.nest()
     .key(function(d) { return d.symbol; });
@@ -47,7 +48,7 @@ d3.csv("data/stocks.csv", function(error, data) {
 
   data.forEach(function(d) {
     d.date = +parseDate(d.date);
-    d.value = +d.value;
+    d.price = +parseNum(d.price);
   });
 
   var layers = stack(nest.entries(data));
@@ -59,7 +60,7 @@ d3.csv("data/stocks.csv", function(error, data) {
       .data(layers)
     .enter().append("path")
       .attr("class", "layer")
-      .attr("d", function(d) { return area(d.values); })
+      .attr("d", function(d) { return area(d.prices); })
       .style("fill", function(d, i) { return z(i); });
 
   svg.append("g")

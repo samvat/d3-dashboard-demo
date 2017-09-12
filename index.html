@@ -2,14 +2,70 @@
 <meta charset="utf-8">
 <head>
   <title>D3 Visualization Demo - Samvat Rastogi</title>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 <body>
+  <div id="header">
+    <h1>D3 Visual Analytical Dashboard - Demo<h1>
+  </div>
 <div id="graph1"></div>
 <div id="graph2"></div>
+<div id="side-graphs">
+<ul class="nav nav-tabs">
+  <li class="active"><a data-toggle="tab" href="#c1">Component 1</a></li>
+  <li><a data-toggle="tab" href="#c2">Component 2</a></li>
+  <li><a data-toggle="tab" href="#c3">Component 3</a></li>
+</ul>
 
+<div class="tab-content">
+  <div id="c1" class="tab-pane fade in active">
+    <div class="graph-container">
+      <h6>Sub-Component 1<h6>
+      <div id="c1g1"></div>
+      <h6>Sub-Component 2<h6>
+      <div id="c1g2"></div>
+      <h6>Sub-Component 3<h6>
+      <div id="c1g3"></div>
+    </div>
+  </div>
+  <div id="c2" class="tab-pane fade">
+    <div class="graph-container">
+      <h6>Sub-Component 1<h6>
+      <div id="c2g1"></div>
+      <h6>Sub-Component 2<h6>
+      <div id="c2g2"></div>
+      <h6>Sub-Component 3<h6>
+      <div id="c2g3"></div>
+    </div>
+  </div>
+  <div id="c3" class="tab-pane fade">
+    <div class="graph-container">
+      <h6>Sub-Component 1<h6>
+      <div id="c3g1"></div>
+      <h6>Sub-Component 2<h6>
+      <div id="c3g2"></div>
+    </div>
+  </div>
+</div>
+</div>
 <!-- load the d3.js library -->
 <script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script src="graphs/g1.js"></script>
 <script src="graphs/g2.js"></script>
+<script>
+  var length = 300;
+  var breadth = 135;
+</script>
+<script src="graphs/c1g1.js"></script>
+<script src="graphs/c1g2.js"></script>
+<script src="graphs/c1g3.js"></script>
+<script src="graphs/c2g1.js"></script>
+<script src="graphs/c2g2.js"></script>
+<script src="graphs/c2g3.js"></script>
+<script src="graphs/c3g1.js"></script>
+<script src="graphs/c3g2.js"></script>
 </body>
 </html>

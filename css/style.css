@@ -1,22 +1,65 @@
 
 body { font: 12px Arial;}
 
+
 path {
-    stroke: steelblue;
-    stroke-width: 2;
-    fill: none;
+stroke : steelblue;
+fill : none;
+}
+.axis path, .axis line {
+fill : none;
+stroke : grey;
+shape-rendering : crispEdges;
 }
 
-.axis path,
-.axis line {
-    fill: none;
-    stroke: grey;
-    stroke-width: 1;
-    shape-rendering: crispEdges;
-}
 
 .legend {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: bold;
     text-anchor: middle;
+}
+
+.legend:hover{
+  cursor: pointer;
+}
+
+.graph-container {
+  margin-left: 10px;
+}
+
+#side-graphs {
+  position: absolute;
+  right:50px;
+  top:100px;
+  width: 400px;
+}
+#graph1 {
+  position: absolute;
+  left:50px;
+  top:100px;
+  width: 1000px;
+}
+#graph2 {
+  position: absolute;
+  left:50px;
+  top:500px;
+  width: 1000px;
+}
+#header {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 1800px;
+}
+#header h1 {
+
+  text-align: center;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+.grid path {
+      stroke-width: 0;
 }

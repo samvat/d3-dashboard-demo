@@ -24,7 +24,7 @@ var priceline = d3.svg.line()
     .y(function(d) { return y(d.price); });
 
 // Adds the svg canvas
-var svg = d3.select("body")
+var svg = d3.select("graph1")
     .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
@@ -35,7 +35,7 @@ var svg = d3.select("body")
 // Get the data
 d3.csv("data/stocks.csv", function(error, data) {
     data.forEach(function(d) {
-		d.date = parseDate(d.date);
+		d.date = +parseDate(d.date);
 		d.price = +parseNum(d.price);
     });
 
